@@ -5,6 +5,6 @@ Default inputs: U = 800 Hz, t_x = 10–30 Hz, κ = 50 Hz/site, chain length L = 
 
 Model
 
-Each atom is a pseudo spin $\downarrow$ = g ($^1S_0$), and $\uparrow$ = e ($^3P_0$). The chain is a plain t-J model with a site dependent potential. 
+Each atom is a pseudo spin $\downarrow$ = g ($^1S_0$), and $\uparrow$ = e ($^3P_0$). The chain is a plain t-J model with a site-dependent potential. 
 
-$H = -t \Sum_{j, \sigma}$
+$H = -t \sum_{j, \sigma} P(c^{\dagger}_{j+1, \sigma}c_{j,\sigma})$ 
