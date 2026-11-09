@@ -86,6 +86,8 @@ The echo π pulse flips every spin. A state (c, s) in sector m maps to (c, s̄) 
 Time evolution is given by $|\psi_c(2T)\rangle = U(T)\,R_\pi\,U(T)\,|\psi_c(0)\rangle$. 
 
 The readout $\pi/2$ pulse is scanned in phase and the phase and contrast are:
-O = \sum_{j \in \mathrm{ROI}} e^{-i\varphi x_j}\,\sigma^-_j, \qquad C(T) = \frac{2\left|\sum_c w_c \langle O\rangle_c\right|}{\sum_c w_c \langle n_{\mathrm{ROI}}\rangle_c}
 
+```math
+O = \sum_{j \in \mathrm{ROI}} e^{-i\varphi x_j}\,\sigma^-_j, \qquad C(T) = \frac{2\left|\sum_c w_c \langle O\rangle_c\right|}{\sum_c w_c \langle n_{\mathrm{ROI}}\rangle_c}
+```
 The complex signals of all initial states are summed.
