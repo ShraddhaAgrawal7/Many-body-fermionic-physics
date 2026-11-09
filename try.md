@@ -97,3 +97,5 @@ Each pattern c gets the probability $w_c$ of being loaded. For independent site 
 
 Then we start averaging along z-- so when we say the filling fraction is 0.5, we vary the filling fraction along z with a Gaussian weight. In the simulation, it simply means averaging the contrast over many 1D chains with varying filling fraction given by the mean that's specified. The patterns’ complex signals $O$ are added before taking the modulus, $C = 2|\sum_c w_c⟨O⟩_c| / Σ_c w_c⟨n_{ROI⟩_c}$, because the camera measures the summed signal. So patterns whose phases drift apart also lower the contrast, not only the decay within each pattern.
 
+Final note on the filling fraction averaging: the code samples n(z) = min(1, n_peak·e^(−z²/2σ²)) at 1201 points from −6σ to +6σ, spaced 0.01σ apart.
+
