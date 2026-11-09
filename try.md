@@ -85,9 +85,15 @@ The echo π pulse flips every spin. A state (c, s) in sector m maps to (c, s̄) 
 
 Time evolution is given by $|\psi_c(2T)\rangle = U(T)\,R_\pi\,U(T)\,|\psi_c(0)\rangle$. 
 
-The readout $\pi/2$ pulse is scanned in phase and the phase and contrast are:
+The readout $\pi/2$ pulse is scanned in phase, and the phase and contrast are:
 
 ```math
 O = \sum_{j \in \mathrm{ROI}} e^{-i\varphi x_j}\,\sigma^-_j, \qquad C(T) = \frac{2\left|\sum_c w_c \langle O\rangle_c\right|}{\sum_c w_c \langle n_{\mathrm{ROI}}\rangle_c}
 ```
 The complex signals of all initial states are summed.
+
+How is the average over many filling fractions done?
+Each pattern c gets the probability $w_c$ of being loaded. For independent site filling $n_j$, $w_c = \prod n_j^{o_j} (1-n_j)^{1-o_j}$, where $o_j$ is 1 for an occupied site and 0 for an empty one. For example, if a chain is 0.5, the weight is 1/512. For n=0.9, the chain has weight 0.39. 
+
+Then we start averaging along z-- so when we say the filling fraction is 0.5, we vary the filling fraction along z with a Gaussian weight. In the simulation, it simply means averaging the contrast over many 1D chains with varying filling fraction given by the mean that's specified. The patterns’ complex signals $O$ are added before taking the modulus, $C = 2|\sum_c w_c⟨O⟩_c| / Σ_c w_c⟨n_ROI⟩_c$, because the camera measures the summed signal. So patterns whose phases drift apart also lower the contrast, not only the decay within each pattern.
+
